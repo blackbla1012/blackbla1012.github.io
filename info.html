@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        :root {
+            --theme: #1EC4D6;
+            --theme-light: #BDF4F2;
+        }
+        img {
+            display: inline-block;
+        }
+        #tri {
+            height:30px;
+            width: 34px;
+            margin:10px
+        }
+        .themecolor {
+            color: var(--theme) ;
+        }
+        #T1 {
+            width: 870px;
+        }
+        #T1T {
+            vertical-align: center;
+            display: inline-block;
+            position: relative;
+            top: 4px;
+        }
+        .nav-item {
+            width: 120px;
+            text-align: center;
+            margin:5px 10px;
+            height: 40px;
+        }
+        .nav-link {
+            color: var(--theme);
+        }
+        #active-link {
+            background-color: var(--theme);
+        }
+        .nav-link:hover {
+            color: var(--theme);
+            height: 40px;
+            border: 1px solid var(--theme);
+        }
+        .btn {
+            background-color: black;
+            border: none;
+        }
+        .btn:hover {
+            background-color: var(--theme);
+            border: none;
+        }
+        #more {
+            background-color: white;
+            color: gray;
+            margin:-10px 0;
+        }
+        .card {
+            width: 400px;
+            margin: 0 0 20px 0;
+        }
+        #text{
+            display: inline-block;
+            position: absolute;
+            left:250px;
+            top:200px;
+        }
+        #big {
+            position: absolute;
+            left:700px;
+            top:90px;
+
+        }
+        #key {
+            position: absolute;
+            top:300px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="T1">
+        <ul class="nav nav-pills">
+            <li>
+                <img id="tri" src="material/笑蓝.png" height="110" width="123"/><h5 class="themecolor" id="T1T">BLACKBLA'S WEBSITE</h5><p style="display: inline-block; width: 50px"></p>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="mainPage.html">首页</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="active-link" href="info.html">小黑是谁？</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="portfolio.html">作品集</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="diary.html">黑之日记</a>
+            </li>
+        </ul>
+    </div>
+    <div id="text">
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#info1" aria-expanded="false" aria-controls="info1">
+                <h3>我是小黑。</h3>
+            </button>
+        </p>
+        <div class="collapse" id="info1">
+            <div class="card card-body">
+                目前就读于浙江大学18级工业设计专业；<br>
+                高中毕业于杭州师范大学附属中学。
+            </div>
+        </div>
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#info2" aria-expanded="false" aria-controls="info2">
+        <h3>我喜欢设计。</h3>
+        </button>
+        </p>
+        <div class="collapse" id="info2">
+            <div class="card card-body">
+                本科时期加入求是潮设计与视觉中心；<br>
+                组队曾获全国大学生工业设计大赛优秀奖。
+            </div>
+        </div>
+        <p>
+            <button id="more" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#info3" aria-expanded="false" aria-controls="info3">
+        还喜欢其他很多东西。
+        </button>
+        </p>
+        <div class="collapse" id="info3">
+            <div class="card card-body" style="color: gray">
+                    学过七年声乐，喜欢音乐、编曲；<br>喜欢平时瞎涂涂画画。
+            </div>
+        </div>
+        <p>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#info4" aria-expanded="false" aria-controls="info4">
+        <h3>我的技能点。</h3>
+        </button>
+        </p>
+        <div class="collapse" id="info4">
+            <div class="card card-body">
+                <strong>
+                    PHOTOSHOP<br>
+                    ILLUSTRATOR<br>
+                    AXTURE<br>
+                    RHINO<br>
+                    C LANGUAGE<br>
+                    PREMIERE<br>
+                    VOLCALOID
+                </strong>
+            </div>
+        </div>
+    </div>
+
+    <img id="big" src="material/black.png" height="550" width="550"/></div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
