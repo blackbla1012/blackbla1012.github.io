@@ -6,24 +6,6 @@
     <title>MainPage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styleSheet.css">
-    <style>
-      #videosList {
-        max-width: 600px; 
-        overflow: hidden;
-      }
-
-      .video {
-        background-image: url('../source/dreamGuardian_main.png');
-        height: 330px;
-        width: 600px;
-        margin-bottom: 50px;
-      }
-
-      /* Hide Play button + controls on iOS */
-      video::-webkit-media-controls {
-          display:none !important;
-      }
-    </style>
   </head>
   <body>
     <div class="container">
@@ -75,11 +57,9 @@
       <h1>BVW Worlds</h1>
       <div class="row d-flex">
         <div class="col-4">
-          <video loop preload="none" class="w-100 video" style="margin:5%;border-radius: 2vw; background-image: url('../source/dreamGuardian_main.png');background-position: center;background-repeat: none; background-size: cover;">
-            <source src="../source/BounceOff_main.mp4" type="video/mp4">
-          Your browser does not support the video tag.
+          <video class="w-100" onmouseover="this.play()" onmouseout="this.pause();this.currentTime=0;" style="margin:5%;border-radius: 2vw;">
+            <source src="../source/BounceOff_main.mp4" type="video/mp4"></source>
           </video>
-          <!-- <img class="img-fluid" src="../source/heiz.jpg" alt="photo" style="margin:5%;border-radius: 2vw;"> -->
         </div>
         <div class="col-4">
           <img class="img-fluid" src="../source/heiz.jpg" alt="photo" style="margin:5%;border-radius: 2vw;">
@@ -100,19 +80,9 @@
       <h3>特效</h3>
       <h1>Random</h1>
 
-      <div id="videosList">           
-
-        <div class="video">
-            <video class="thevideo" loop preload="none">
-              <source src="../source/BounceOff_main.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-            </video>
-          </div>
-          Hover mouse over video. Desktop only [ Obviously! ;) ]
-        </div>
-    </div>
+      
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <script>
+    <!-- <script>
       var figure = $(".video").hover( hoverVideo, hideVideo);
 
       function hoverVideo(e) {  
@@ -122,7 +92,7 @@
       function hideVideo(e) {
           $('video', this).get(0).pause(); 
       }
-    </script>
+    </script> -->
 
   </body>
 </html>
