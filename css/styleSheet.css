@@ -1,6 +1,6 @@
 body{
     background-color: white;
-    font-family: font2;
+    font-family: font2, pixelChinese;
 }
   
   
@@ -10,12 +10,17 @@ body{
     }
   }
 
-/* @font-face {
+@font-face {
     font-family: Karmella;
     src: url('../source/font/Karmella.woff') format('woff');
-} */
+}
 
 @font-face {
   font-family: font2;
   src: url('../source/font/VCR_OSD_MONO_1.001.woff') format('woff');
+}
+
+@font-face {
+  font-family: pixelChinese;
+  src: url('../source/font/ark-pixel-12px-monospaced-zh_cn.woff2') format('woff2');
 }
