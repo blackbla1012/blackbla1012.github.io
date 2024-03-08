@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //新建了一个<audio>element, 但并没有被append到任何地方
     var audioElement = document.createElement('audio');
     audioElement.setAttribute('src', $('.active-song').attr('data-src'));
 
@@ -10,7 +11,7 @@ $(document).ready(function () {
     }, '-=0.2');
     tl.pause();
 
-    $('.player__play').click(function () {
+    $('.player .player__play').click(function () {
 
         if ($('.player').hasClass('play')) {
             $('.player').removeClass('play');
@@ -32,7 +33,7 @@ $(document).ready(function () {
 
     });
 
-
+    //进度条加载
     var playhead = document.getElementById("playhead");
     audioElement.addEventListener("timeupdate", function () {
         var duration = this.duration;
@@ -41,12 +42,16 @@ $(document).ready(function () {
         playhead.style.width = percentage *2 + 'px';
     });
 
+    //update author and song name info
     function updateInfo() {
-        $('.player__author').text($('.active-song').attr('data-author'));
-        $('.player__song').text($('.active-song').attr('data-song'));
+        $('.player__author').text($('.player__author').parents(".player").children(".player__bar").children(".player__album").children(".active-song:eq(0)").attr("data-author"));
+      //  
+        // $('.player__song').text( $(this).parents(".player")[0].attr("datat"));
+        console.log( $('.player__author').parents(".player").children(".player__bar").children(".player__album").children(".active-song:eq(0)").attr('data-author'));
     }
     updateInfo();
 
+    //click next function
     $('.player__next').click(function () {
         if ($('.player .player__albumImg.active-song').is(':last-child')) {
             $('.player__albumImg.active-song').removeClass('active-song');
@@ -71,6 +76,7 @@ $(document).ready(function () {
         audioElement.play();
     });
 
+    //click prev function
     $('.player__prev').click(function () {
         if ($('.player .player__albumImg.active-song').is(':first-child')) {
             $('.player__albumImg.active-song').removeClass('active-song');
