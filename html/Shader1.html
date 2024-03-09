@@ -32,6 +32,10 @@
       .description{
         max-width: 70%;
       }
+
+      .row{
+        margin: 5% 0;
+      }
     </style>
 
     <body>
@@ -63,14 +67,11 @@
               </div>
             </nav>
 
-            <div class="row d-flex">
-            </div>
-
             <h2>Toon Shader</h2>
 
             <h5 style="text-align: center; margin: 2% auto 2% auto">Features</h5>
             <div class="row d-flex">
-                <div class="row col-5 p-0 d-flex align-items-center justify-content-end">
+                <div class="row col-5 p-0 d-flex justify-content-end">
 
                     <div class="col-12 align-items-end justify-content-end d-flex description">
                         <p style="font-size: min(1.2vw, 1.2vh);  text-align: end;">
@@ -83,28 +84,22 @@
                     
                     <div class="col-12 align-items-start justify-content-end d-flex description">
                         <p style="font-size: min(1.2vw, 1.2vh);  text-align: end;">
-                            Customize the light color, middle color and the shadow color of the material, which prevents the model from being grayed in dark space. We also add 2 color steps parameters to customize where the colors are transited. To make the color transition less stiff, we add a feather value to define the percentage of the range between color transitions to make it smoother.
-                            </p>
+                            Customize the light color, middle color and the shadow color of the material, which prevents the model from being grayed in dark space.
+                            <br>
+                            Add 2 color steps parameters to customize where the colors are transited.
+                        </p>
                     </div>
 
                     <div class="col-12 Features align-items-end justify-content-end d-flex" style="text-align: end;">
-                        3 Colors
-                        <br>
                         Feather
-                        <br>
-                        Parameters
-                        <br>
                     </div>
                     
-                    <div class="col-12 align-items-start justify-content-end d-flex">
+                    <div class="col-12 align-items-start justify-content-end d-flex description">
                         <p style="font-size: min(1.2vw, 1.2vh);  text-align: end;">
-                            The toon shader referenced to the pokemon go art style. 
-                            <br>
-                            There are 3 features in this toon shader, the first is we can customize the light color, middle color and the shadow color of the material, which prevents the model from being grayed in dark space. We also add 2 color steps parameters to customize where the colors are transited. To make the color transition less stiff, we add a feather value to define the percentage of the range between color transitions to make it smoother.
+                            Add a feather value to define the percentage of the range between color transitions to make it smoother.
                             </p>
                     </div>
-                   
-
+                
                     
                    
                 </div>
@@ -114,12 +109,49 @@
                 
             </div>
 
+            <h5 style="text-align: center; margin: 2% auto 2% auto">Half-Lambert Light Model</h5>
+
+            <!-- light model compare -->
+            <div class="row d-flex">
+                <div class="col-0 col-md-1 p-0"></div>
+                <div class="col-6 col-md-5 p-0">
+                    <div class="col-12 p-0 d-flex justify-content-center">
+                        <img src="../source/unityShader/before.png" alt="Before" style="aspect-ratio: 1; object-fit: cover; xobject-position: center;">
+                    </div>
+                    <div class="col-12 p-0" style="text-align: center;">
+                        <h5>before</h5>
+                    </div>
+                </div>
+                <div class="col-6 col-md-5 p-0">
+                    <div class="col-12 p-0 d-flex justify-content-center">
+                        <img src="../source/unityShader/after.png" alt="After" style="aspect-ratio: 1; object-fit: cover; xobject-position: center;">
+                    </div>
+                    <div class="col-12 p-0" style="text-align: center;">
+                        <h5>after</h5>
+                    </div>
+                </div>
+                <div class="col-0 col-md-1 p-0"></div>
+           </div>
+
+            <!-- shader code -->
+            <div class="row d-flex">
+                <div class="col-0 col-md-1 p-0"></div>
+                <div class="col-12 col-md-10 p-0 align-items-center d-flex justify-content-center">
+                    <img src="../source/unityShader/toonShaderCode.png" alt="shaderCode">
+                </div>
+                <div class="col-0 col-md-1 p-0"></div>
+            </div>
+
 
             <h2>Particle System + Shader</h2>
 
-            <h5 style="text-align: center; margin: 5% auto 2% auto">Shader</h5>
             <div class="row d-flex">
-            </div>
+                <div class="col-0 col-md-2 p-0"></div>
+                <div class="col-12 p-0 d-flex justify-content-center">
+                    <img src="../source/unityShader/lightning_scar.gif" alt="Before" style="aspect-ratio: 1; object-fit: cover; xobject-position: center;">
+                </div>
+                <div class="col-0 col-md-2 p-0"></div>
+           </div>
 
         
         </div>
