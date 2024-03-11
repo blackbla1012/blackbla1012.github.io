@@ -1,0 +1,345 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>15-472-s24: A1 - Scene Graph</title>
+<style>
+/* feel free to style your report in a fancier way! */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&Anonymous+Pro&display=swap');
+
+html {
+	background:#505055;
+}
+
+body {
+	font-family: 'Quicksand', sans-serif;
+	color:#000;
+	background:#eeeee8;
+	font-size:15px;
+	margin: 1em auto 50vh auto;
+	padding: 1em 2em 1em 2em;
+	max-width:45em;
+	border-radius:4px;
+	box-shadow:0 0 10px #0008;
+}
+
+h1 { font-size: 20px; font-weight: 700; }
+h2 { font-size: 16px; font-weight: 700; }
+h3 { font-size: 16px; font-weight: 400; }
+h4 { font-size: 14px; font-weight: 400; }
+
+h1, h2, h3, h4 {
+	margin: 15px 0 0 -10px;
+}
+
+p {
+	margin: 5px 0 0 0;
+}
+
+.subtitle {
+	display:block;
+	font-size:16px;
+	font-weight:400;
+}
+
+.placeholder {
+	color:#800;
+	font-style:italic;
+}
+
+kbd {
+	display:inline-block;
+	background:#ccc;
+	color:#444;
+	font-style:normal;
+	font-weight:700;
+	border-radius:8px;
+	padding:1px 6px;
+	margin:1px;
+	border:1.5px solid #aaa;
+}
+
+code {
+	font-family: 'Anonymous Pro', monospace;
+	background: #222;
+	color:#fff;
+	border-radius:4px;
+	padding:2px 4px;
+	margin:1px;
+}
+
+code var {
+	color:#ef5;
+	font-style:italic;
+}
+
+.atag {
+	font-family: 'Calistoga', serif;
+	font-size:90%;
+	color:#000;
+	background:#b00;
+
+	display:inline-block;
+	padding:1px 4px;
+	border-radius: 4px;
+	line-height:120%;
+}
+.atag:before {
+	content:'»';
+}
+.atag.extra {
+	background:#b08;
+}
+.atag.creative {
+	/* thanks, shout.horse! */
+	background:linear-gradient(0.4turn, #ffe680, #916f6f);
+}
+
+</style>
+</head>
+<body>
+<h1>A1: Scene Viewer
+<span class="subtitle">by <span class="placeholder">Yunqi Li (yunqili)</span></span>
+</h1>
+
+<p class="placeholder">
+Summarize:
+<br>
+I made a scene.h file to contain the definition of all scene elements in the JSON file.
+<br> I wrote some math code for math calculations. 
+<br>I created a mesh reader to read .b72 format.
+<br>I made several camera interactions.
+<br>
+The node transformation seems have some problem but I didn't managed to find that. Also I didn't managed to finish animation, hide, culling, compiling by maekfile due to time limitation. 
+(I have a poor foundation in computer science and programming and this is the first time for me to write such a large structure of code)
+</p>
+
+<h2>My Animation <span class="atag creative">A1-create</span></h2>
+
+<p class="placeholder">
+Describe your animation and include a screen recording showing it running in real-time:
+NO
+</p>
+
+<video>
+</video>
+
+<p class="placeholder">
+Describe how you created your animation. NONE
+</p>
+
+<h2>Using the Scene Viewer</h2>
+
+<p class="placeholder">
+    To use the scene viewer, change the json file path in "JsonParser jsonParser(JSON file path)" in the main function in main.cpp. Then run the app.
+	<br>
+	<br>
+    The default camera is userCamera, which has the camera interactions.
+	<br><br>
+    Pressing number 1 on the keyborad will change the camera to user camera, pressing 2 will change to the first scene camera, 
+    and pressing 3 will change to debug camera(but it's same as the user camera because I didn't finish culling). 
+	<br>Keeping pressing 2 will traverse all scene cameras and the camera name would be shown in the terminal.
+</p>
+
+<h3>Command-line Arguments NONE</h3>
+
+<p class="placeholder">
+No command-line arguments are implemented
+(I used Visual Studio to compile during coding)
+</p>
+
+<h3>Controls</h3>
+
+<p class="placeholder">
+Document the keyboard and mouse controls used to control your viewer when run interactively.
+Note that the controls below are placeholders not requirements.
+</p>
+
+<ul>
+<li class="placeholder"><kbd>1</kbd> switch to the user camera.</li>
+<li class="placeholder"><kbd>2</kbd> switch to/traverse the scene camera.</li>
+<li class="placeholder"><kbd>3</kbd> switch to the debug camera.</li>
+
+<li class="placeholder"><kbd>W</kbd> camera go upward.</li>
+<li class="placeholder"><kbd>A</kbd> camera go leftward.</li>
+<li class="placeholder"><kbd>S</kbd> camera go downward.</li>
+<li class="placeholder"><kbd>D</kbd> camera go rightward.</li>
+
+<li class="placeholder">mouse middle button pressed and drag: rotate the camera</li>
+<li class="placeholder">mouse middle button scroll: zoom in/out the scene</li>
+</ul>
+
+
+<h2>My Code</h2>
+
+<p class="placeholder">
+For each of the following sections, describe the overall structure of your code, and reference the specific files/functions/data structures that you used.
+For any parts that are incomplete, discuss what you were able to do and what you tried but couldn't get working.
+</p>
+
+<p class="placeholder">
+The purpose of this section is to get you to think critically about your code by explaining it to course staff; these thoughts may help you improve the code as you work on it in A2 and beyond.
+This section also forms a road map to your code that we can use while grading.
+</p>
+
+<h3>Support Code for Math and Vulkan</h3>
+
+<p class="placeholder">
+I implemented vec3, vec4 and mat4 classes. I just implemented several operations that I need to use in the scene rendering so it's definitely not comprehensive. 
+<br>
+<br>
+For the vec3 / vec4, I implemented =, +, -, * operators, basic functions like length(), normalize(), dot product, cross product, and min/max.
+<br>
+<br>
+For mat4.h, I implemented translate, rotation and scale matrix construction, and impelemented lookAt, perspective matrix construction in reference of glm lookAt and perspective algorithm.
+I also implemented *(mat4, vec3, vec4), *=, inverse(), and transpose() function for mat4.
+<br>
+<br>
+For the vulkan support, I basically used the set up code in vulkan tutorial.
+</p>
+
+<h3>Loading scenes, Mesh data <span class="atag">A1-load</span></h3> 
+
+<p class="placeholder">
+For the JSON parser, I wrote it just for .s72 file format. All parsed data were stored in the vectors or maps (like jsonParser.meshes)
+of the JSONparser instance. For detailed coding, I just use a filestream to read the file. After detecting a object of the scene graph, I would
+create a new stringstream to get that line, use getline to get the value using different charactor as allocator (':' & ',').
+For the meshes, cameras and nodes, I used std::map to store them because they have a unique index that would be used to assign attributes. For the others, I
+just used vectors.
+<br>
+<br>
+The meshReader.h accept a mesh element and read the .b72 file to vertices structure to put into the mesh data. For the basic implementation, it's just a simple basic binary reader.
+To add the vertices information of each data, I just used a loop to traverse jsonParser.meshes (where the mesh data is stored) and for each mesh I used the meshReader to put the vertices data.
+For the render, I first parse the 
+JSON data, then use mesh reader to read vertices. After that, I set up the nodes' parent relationships, and compute transformation matrix for each node.
+The nodes are traversed to instance corresponding mesh or camerma and the transformation matrixes are applied to them as well. I didn't managed to change to push constants and still remain
+at the Uniform Buffer method. I pushed all vertices data to a large vector to create vertex buffer.
+</p>
+<h3>Drawing the scene. <span class="atag">A1-show</span></h3>
+
+<p class="placeholder">
+Cover, at least:
+how your code computes camera transformations;
+how your code get transformation and vertex data to your shaders.
+</p>
+<p class="placeholder">
+Include a screenshot of your viewer drawing an example scene.
+<br>
+<br>
+For the nodes transformations, I first build the nodes' parent/children relationship for each node, than I compute the overall transformation matrix for each node based on the recursive operation
+(multiply parent's transformation to this node).
+<br>
+<br>
+After computing all nodes' local to world values, I applied the value to vertices and cameras.
+For the vertices, I multipled the localToWorld transformation matrix to the vertex POSITION, and multipled the transposed inverted localToWorld matrix to vertex NORMAL.
+For the scene cameras, to just apply translation to position, I extracted the first three items of the last column in matrix as translation direction, then apply it to position value of camera.
+To just apply rotation value to the camera front, up and right directions, I multiplied the localToWorld matrix with a vec4 that the last element is 0.0f (indicating it's a vector), than use the normalized fisrt 3 value of the output as the result.
+<br>
+<br>
+Problem: I found that the node transformation is wierd in the scene. I don't know why. In the rotation.s72, it normal because it didn't contain parent relationship. 
+But for others the scene is wierd. I've been debugging it for a long time but stil couldn't find why.
+</p>
+
+<h3>Handling interactive camera and debug camera movement. <span class="atag">A1-show</span></h3>
+
+<p class="placeholder">
+I implemented camera controls including rotation, 4-direction translation(up, down, right, left), zooming in/out/ 
+The camera controls are implemented both in camera class (in scene.h) and main.cpp (to get glfw key/mouse event and callbacks).
+<br><br>
+Camera Interactions:
+<ul>
+    <li class="placeholder"><kbd>1</kbd> switch to the user camera.</li>
+    <li class="placeholder"><kbd>2</kbd> switch to/traverse the scene camera.</li>
+    <li class="placeholder"><kbd>3</kbd> switch to the debug camera.</li>
+    
+    <li class="placeholder"><kbd>W</kbd> camera go upward.</li>
+    <li class="placeholder"><kbd>A</kbd> camera go leftward.</li>
+    <li class="placeholder"><kbd>S</kbd> camera go downward.</li>
+    <li class="placeholder"><kbd>D</kbd> camera go rightward.</li>
+    
+    <li class="placeholder">mouse middle button pressed and drag: rotate the camera</li>
+    <li class="placeholder">mouse middle button scroll: zoom in/out the scene</li>
+    </ul>
+</p>
+<p class="placeholder">
+Include a screen recording of you moving the camera in a scene.
+</p>
+<video width="320" height="240" controls>
+	<source src="CameraInteraction.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+  </video>
+<h3>Frustum culling <span class="atag">A1-cull</span></h3>
+
+<p class="placeholder">
+<br><br>
+I didn't managed to do this.
+</p>
+
+<h3>Animating the scene <span class="atag">A1-move</span></h3>
+<p class="placeholder">
+I didn't managed to do this.
+</p>
+
+<h3>Handling headless mode <span class="atag">A1-hide</span></h3>
+<p class="placeholder">
+I didn't managed to do this.
+</p>
+
+<h3>Performance improvements <span class="atag extra">A1x-fast</span></h3>
+<p class="placeholder">
+I didn't managed to do this.
+</p>
+
+<h2>Performance Tests</h2>
+
+<p class="placeholder">
+I didn't managed to do this.
+</p>
+
+<p class="placeholder">
+</p>
+
+<h3>Culling</h3>
+<p class="placeholder">
+I didn't managed to do this.
+</p>
+
+<h3>Bottlenecks</h3>
+<p class="placeholder">
+I didn't managed to do this.
+</p>
+
+
+<!-- For example:
+<h4>CPU Bottleneck</h4>
+<p class="placeholder">
+The scenes <a href="#">traversal-*.s72</a> causes my viewer to bottleneck on scene traversal.
+This plot shows the ...
+</p> -->
+
+
+<h3>Performance Improvements</h3>
+
+<p class="placeholder">
+I didn't managed to do this.
+</p>
+
+<h2>Feedback</h2>
+<p class="placeholder">
+The workload is too heavy for me. I'm not a computer science department student when I was in my bachelor's degree. The reason I select this class is I want to be a technical artist 
+(instead of graphics engineer) as my carer goal, so it would be good for me to understand some real-time rendering math / theories that could be implemented into game engines like unreal or unity.
+<br><br>
+For me, I have poor foundation with computer science and coding, it would be too hard for me to implement all the functions / structures of a render software by myself without using other external libraries.
+For example, it's my first time to have access to JSON parser, so I need to search on the internet and learn it for a long time to start coding. This is the same when I tried to understand the Maekfile compile, and command line controlling (but I failed to implement them).
+For me, I'm more eager to focus on the algorithm / math / theory / function part of real-time rendering (shadow / light / real-time path-tracing) but not from the base of a structure. (I'm sorry for this!)
+<br><br>
+Also, as an ETC student, I have a project course which is 36 hours per week. I need to put a lot of time into the project, and don't have enough time to implement the code in this course. 
+It's obvious that I didn't finish a lot of parts in this assignment though I think I've spent too much time on this. I'm really afraid if I would fail this course.
+<br><br>
+Last, it would be much better if the class have more TAs to answering questions like 15462 computer graphics course.(Or a way to privately ask questions like Piazza) 
+</p>
+
+</body>
+</html>
