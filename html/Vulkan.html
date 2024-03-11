@@ -34,11 +34,12 @@
       }
 
       .row{
-        margin: 5% 0;
+        margin: 1% 0;
       }
       video{
         max-width: 90%;
       }
+
     </style>
 
     <body>
@@ -73,6 +74,20 @@
             <h2>Scene Viewer</h2>
 
             <div class="row d-flex">
+                <h5 style="text-align: center; margin: 5% auto 2% auto">Graphics API</h5>
+                <p class="col-md-6 col-12" style="margin:0 auto;text-align: center;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">
+                    Vulkan
+                </p>    
+            </div>
+
+            <div class="row d-flex">
+                <h5 style="text-align: center; margin: 5% auto 2% auto">Library</h5>
+                <p class="col-md-6 col-12" style="margin:0 auto;text-align: center;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">
+                    GLFW - For Window Display
+                </p>    
+            </div>
+
+            <div class="row d-flex">
                 <h5 style="text-align: center; margin: 5% auto 2% auto">Summary</h5>
                 <p class="col-md-6 col-12" style="margin:0 auto;text-align: center;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">
                     Made a scene.h file to contain the definition of all scene elements for a scene.
@@ -81,7 +96,7 @@
                     <br>Created a mesh reader to read .b72 format.
                     <br>Made several camera interactions with keyboards and mouse.
                 </p>    
-              </div>
+            </div>
 
             <h5 style="text-align: center; margin: 2% auto 2% auto">Demo</h5>
 
@@ -93,111 +108,25 @@
                 <div class="col-0 col-md-2 p-0"></div>
            </div>
 
-
             <div class="row d-flex">
-                <div class="row col-5 p-0 d-flex justify-content-end">
-
-                    <div class="col-12 align-items-end justify-content-end d-flex description">
-                        <p style="font-size: min(1.2vw, 1.2vh);  text-align: end;">
-                            The toon shader referenced to the pokemon go art style. 
-                        </p>
-                    </div>
-                    <div class="col-12 Features align-items-end justify-content-end d-flex description" style="text-align: end;">
-                        3 Colors
-                    </div>
-                    
-                    <div class="col-12 align-items-start justify-content-end d-flex description">
-                        <p style="font-size: min(1.2vw, 1.2vh);  text-align: end;">
-                            Customize the light color, middle color and the shadow color of the material, which prevents the model from being grayed in dark space.
-                            <br>
-                            Add 2 color steps parameters to customize where the colors are transited.
-                        </p>
-                    </div>
-
-                    <div class="col-12 Features align-items-end justify-content-end d-flex" style="text-align: end;">
-                        Feather
-                    </div>
-                    
-                    <div class="col-12 align-items-start justify-content-end d-flex description">
-                        <p style="font-size: min(1.2vw, 1.2vh);  text-align: end;">
-                            Add a feather value to define the percentage of the range between color transitions to make it smoother.
-                            </p>
-                    </div>
-                
-                    
-                   
-                </div>
-                <div class="col-7 p-0  align-items-center d-flex justify-content-center">
-                    <img src="../source/unityShader/shaderShowcase_Enlarged.gif" alt="shaderShowcase">
-                </div>
-                
+                <h5 style="text-align: center; margin: 5% auto 2% auto">Controls</h5>
+                <ul style="text-align: center; list-style: none;">
+                    <li><kbd>1</kbd> switch to the user camera.</li>
+                    <li><kbd>2</kbd> switch to/traverse the scene camera.</li>
+                    <li><kbd>3</kbd> switch to the debug camera.</li>
+        
+                    <li><kbd>W</kbd> camera go upward.</li>
+                    <li><kbd>A</kbd> camera go leftward.</li>
+                    <li><kbd>S</kbd> camera go downward.</li>
+                    <li><kbd>D</kbd> camera go rightward.</li>
+        
+                    <li>mouse middle button pressed and drag: rotate the camera</li>
+                    <li>mouse middle button scroll: zoom in/out the scene</li>
+                </ul>
             </div>
 
-            <h5 style="text-align: center; margin: 2% auto 2% auto">Half-Lambert Light Model</h5>
+           <a class="button" style="text-align: center; margin: 5% auto 2% auto; border:none; border-radius:1vw; display:block" href="https://github.com/blackbla1012/Real-Time-Assignment"><h1>Github Link</h1></a>
 
-            <!-- light model compare -->
-            <div class="row d-flex">
-                <div class="col-0 col-md-1 p-0"></div>
-                <div class="col-6 col-md-5 p-0">
-                    <div class="col-12 p-0 d-flex justify-content-center">
-                        <img src="../source/unityShader/before.png" alt="Before" style="aspect-ratio: 1; object-fit: cover; object-position: center;">
-                    </div>
-                    <div class="col-12 p-0" style="text-align: center;">
-                        <h5>before</h5>
-                    </div>
-                </div>
-                <div class="col-6 col-md-5 p-0">
-                    <div class="col-12 p-0 d-flex justify-content-center">
-                        <img src="../source/unityShader/after.png" alt="After" style="aspect-ratio: 1; object-fit: cover; object-position: center;">
-                    </div>
-                    <div class="col-12 p-0" style="text-align: center;">
-                        <h5>after</h5>
-                    </div>
-                </div>
-                <div class="col-0 col-md-1 p-0"></div>
-           </div>
-
-            <!-- shader code -->
-            <div class="row d-flex">
-                <div class="col-0 col-md-1 p-0"></div>
-                <div class="col-12 col-md-10 p-0 align-items-center d-flex justify-content-center">
-                    <img src="../source/unityShader/toonShaderCode.png" alt="shaderCode">
-                </div>
-                <div class="col-0 col-md-1 p-0"></div>
-            </div>
-
-
-            <h2>Particle System + Shader</h2>
-
-            <div class="row d-flex">
-                <div class="col-0 col-md-2 p-0"></div>
-                <div class="col-12 col-md-8 p-0 d-flex justify-content-center">
-                    <img src="../source/unityShader/lightning_scar.gif" alt="Before" style="aspect-ratio: 1; object-fit: cover; object-position: center;">
-                </div>
-                <div class="col-0 col-md-2 p-0"></div>
-           </div>
-
-           <h5 style="text-align: center; margin: 2% auto 2% auto">Codes + Settings</h5>
-
-           <div class="row d-flex">
-            <div class="col-0 col-md-1 p-0"></div>
-            <div class="col-6 col-md-5 p-0">
-                <div class="col-12 p-0 d-flex justify-content-center">
-                    <img src="../source/unityShader/lightningShaderCode.png" alt="Before" style="aspect-ratio: 1; object-fit: cover; object-position:left;">
-                </div>
-                <div class="col-12 p-0" style="text-align: center;">
-                    <h5>Codes</h5>
-                </div>
-            </div>
-            <div class="col-6 col-md-5 p-0">
-                <div class="col-12 p-0 d-flex justify-content-center">
-                    <img src="../source/unityShader/lightningParticleSetting.png" alt="After" style="aspect-ratio: 1; object-fit: cover; object-position: left;">
-                </div>
-                <div class="col-12 p-0" style="text-align: center;">
-                    <h5>Parts of Particle Settings</h5>
-                </div>
-            </div>
-            <div class="col-0 col-md-1 p-0"></div>
        </div>
 
         
