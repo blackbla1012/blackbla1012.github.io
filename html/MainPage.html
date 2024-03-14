@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styleSheet.css">
     <style>
-
       .MainImg {
         transition: transform .2s;
         border-radius:1vw !important;
@@ -26,32 +25,8 @@
         cursor: pointer !important;
       }
 
-      .scrollFade {
-        opacity: 1;
-        pointer-events: all;
-      }
-      .scrollFade--hidden {
-        opacity: 0;
-        pointer-events: none;
-      }
-      .scrollFade--visible {
-        opacity: 1;
-        pointer-events: all;
-      }
-      .scrollFade--animate {
-        transition: opacity 0.4s ease-in-out;
-      }
-
-      .dropdown-item.active, .dropdown-item:active {
-          color: black;
-          text-shadow: #FC0 1px 0 10px;
-          background-color: rgba(255,255,255,0); 
-      }
-
-      h2{
-        font-size: min(2vw, 2vh);
-        margin:1% auto 0 1% !important;
-        text-align: center;
+      .MainImg:hover{
+        box-shadow: 0 0 30px 0px #7d85ce;
       }
 
       .btn img{
@@ -66,17 +41,6 @@
 
       .card {
         border-radius:1vw !important;
-      }
-
-      nav img{
-            width: 30px !important;
-            aspect-ratio: auto !important;
-      }
-
-      nav{
-        backdrop-filter: blur(10px);
-        -webkit-mask-image: -webkit-gradient(linear,left 50%,left 100%, from(rgba(255,255,1,1)), to(rgba(0,0,0,0)));
-        padding: 3% 0 !important;
       }
     </style>
   </head>
@@ -120,8 +84,8 @@
           </div>
         </div>
         <div class="col-12 col-md-8 p-0">
-          <p style="margin:1% 10% 1% 5%; font-size: min(3vw, 3vh);">Yunqi Li</p>
-          <p style="margin:1% 10% 1% 5%; font-size: min(2vw, 2vh);">李蕴祺</p>
+          <p style="margin:1% 10% 1% 5%; font-size: max(1.3vw, 2vh);" class="neonText">Yunqi Li</p>
+          <p style="margin:1% 10% 1% 5%; font-size: max(1.3vw, 2vh);"  class="neonText">李蕴祺</p>
           <p style="margin:1% 10% 1% 5%; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">With aesthetic foundation built from Industrial Design as her bachelor’s degree and her passion with computer graphics, 
             Yunqi Li pursues her career as a technical artist with her goal of making novel and advanced game graphics. With her solid foundation in mathematics and art, 
             she determined her position to focus on real-time technical rendering to improve artistic expresstion in game industry. She will continue exploring possibilities 
@@ -486,9 +450,10 @@
             </a>
           </div>
         </div>
-
-        
       </div>
+    </div>
+
+    <div class="gradient-bg"></div>
       
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

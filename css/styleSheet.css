@@ -1,14 +1,77 @@
+
 body{
-    background-color: white;
+    background-color: black;
     font-family: font2, pixelChinese;
+    color:white !important;
+    background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  color: white;
+  text-shadow: #FC0 1px 0 10px;
+  background-color: rgba(255,255,255,0); 
+}
+
+.dropdown-item{
+color: white;
+}
+
+.navbar-brand{
+color: white;
+}
+
+.navbar-brand:hover, .dropdown-item:hover{
+color: #7d85ce;
+}
+
+nav img{
+  width: 30px !important;
+  aspect-ratio: auto !important;
+  padding: 0% !important;
+}
+
+nav{
+  backdrop-filter: blur(10px);
+  -webkit-mask-image: -webkit-gradient(linear,left 50%,left 100%, from(rgba(255,255,1,1)), to(rgba(0,0,0,0)));
+  padding: 3% 0 !important;
+}
+
+h2{
+  font-size: max(1.3vw, 2vh);
+  margin:1% auto 0 1% !important;
+  text-align: center;
+}
+
+.card{
+  box-shadow: 0 0 10px 0px #636bb4;
+}
+
+h2, .neonText{
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    color: #fff;
+    text-shadow: 0 0 5px #00fff2, 0 0 10px #29d6cd,
+      0 0 15px #29d6cd, 0 0 20px #29d6cd, 0 0 25px #29d6cd,
+      0 0 30px #29d6cd, 0 0 35px #29d6cd, 0 0 40px #29d6cd;
+  }
+  to {
+    color: gray;
+    text-shadow: 0 0 10px #29d6cd, 0 0 15px #29d6cd,
+      0 0 20px #29d6cd, 0 0 25px #29d6cd, 0 0 30px #29d6cd,
+      0 0 35px #29d6cd, 0 0 40px #29d6cd, 0 1 45px #29d6cd;
+  }
 }
   
-  
-  @media (min-width: 1200px) {
-    .container-fluid {
-      max-width: 1500px;
-    }
+@media (min-width: 1200px) {
+  .container-fluid {
+    max-width: 1500px;
   }
+}
 
 @font-face {
     font-family: Karmella;
@@ -23,4 +86,36 @@ body{
 @font-face {
   font-family: pixelChinese;
   src: url('../source/font/ark-pixel-12px-monospaced-zh_cn.woff2') format('woff2');
+}
+
+hr{
+  margin: 0 auto;
+  width: 80% !important;
+  -webkit-animation: glowHR 1s step-end infinite alternate;
+  -moz-animation: glowHR 1s step-end infinite alternate;
+  animation:glowHR 1s step-end infinite alternate;
+}
+
+@-webkit-keyframes glowHR {
+  0% {
+    border: 0.3vh dashed rgb(251, 255, 3);
+  }
+  25% {
+    border: 0.3vh dashed #00fff2;
+  }
+  50% {
+    border: 0.3vh dashed white;
+  }
+  75% {
+    border: 0.3vh dashed #ff00f2;
+  }
+  100% {
+    border: 0.3vh dashed white;
+  }
+}
+
+.button{
+  color: #ffffff;
+  text-decoration: none;
+  background-color:gray
 }
