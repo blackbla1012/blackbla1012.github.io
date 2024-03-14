@@ -30,6 +30,10 @@ nav img{
   padding: 0% !important;
 }
 
+img{
+  border-radius:10px !important;
+}
+
 nav{
   backdrop-filter: blur(10px);
   -webkit-mask-image: -webkit-gradient(linear,left 50%,left 100%, from(rgba(255,255,1,1)), to(rgba(0,0,0,0)));
@@ -98,7 +102,7 @@ hr{
 
 @-webkit-keyframes glowHR {
   0% {
-    border: 0.3vh dashed rgb(251, 255, 3);
+    border: 0.3vh dashed rgb(255, 255, 255);
   }
   25% {
     border: 0.3vh dashed #00fff2;
@@ -107,15 +111,22 @@ hr{
     border: 0.3vh dashed white;
   }
   75% {
-    border: 0.3vh dashed #ff00f2;
+    border: 0.3vh dashed rgb(255, 0, 208);
   }
   100% {
-    border: 0.3vh dashed white;
+    border: 0.3vh dashed rgb(255, 255, 255);
   }
 }
 
 .button{
   color: #ffffff;
   text-decoration: none;
-  background-color:gray
+  background-color:rgba(69, 69, 69, 0.7);
+  width: 80%;
+  border-radius: 10px !important;
+  box-shadow: 5px 5px 0px 0px #636bb4;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation:glow 1s ease-in-out infinite alternate;
+  
 }
