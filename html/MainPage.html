@@ -68,13 +68,23 @@
         border-radius:1vw !important;
       }
 
+      nav img{
+            width: 30px !important;
+            aspect-ratio: auto !important;
+      }
+
+      nav{
+        backdrop-filter: blur(10px);
+        -webkit-mask-image: -webkit-gradient(linear,left 50%,left 100%, from(rgba(255,255,1,1)), to(rgba(0,0,0,0)));
+        padding: 3% 0 !important;
+      }
     </style>
   </head>
   <body>
     <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg sticky-top" style="background-image: linear-gradient(rgba(255,255,255,1),rgba(255,255,255,0.8),rgba(255,255,255,0)); padding: 3% 0;">
+      <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="MainPage.html">Yunqili</a>
+          <a class="navbar-brand" href="MainPage.html"><img src="../source/blackLogo.gif" width="30vw"> Yunqili</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -466,8 +476,8 @@
 
         <div class="row d-flex justify-content-center">
           <div class="col-12 col-md-6 p-0">
-            <a class="btn p-0 border-0">
-              <div class="card" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
+            <a class="btn p-0 border-0" href="bingo.html">
+              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
                 <img src="../source/bingoBoss_1.png" class="card-img" alt="bingo">
                 <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
                   <h6 class="text-white">Bingo</h6>
