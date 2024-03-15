@@ -10,23 +10,24 @@
       .MainImg {
         transition: transform .2s;
         border-radius:10px !important;
+        z-index: 2;
       }
 
       .card-img-overlay {
           display: none !important;
         }
 
-      .MainImg:hover  {
+      .MainImg:hover{
         transform: scale(1.05);
       }
 
-      .MainImg:hover  .card-img-overlay{
+      .MainImg:hover .card-img-overlay{
         display: flex !important;
         cursor: pointer !important;
       }
 
       .MainImg:hover{
-        box-shadow: 0 0 30px 0px #7d85ce;
+        box-shadow: 0 2px 30px 2px #7d85ce;
       }
 
       .btn img{
@@ -35,7 +36,7 @@
         object-position: center;
       }
 
-      a:hover {
+      .card:hover {
         cursor: default;
       }
 
@@ -84,9 +85,9 @@
           </div>
         </div>
         <div class="col-12 col-md-8 p-0">
-          <p style="margin:1% 10% 1% 5%; font-size: max(1.3vw, 2vh);" class="neonText">Yunqi Li</p>
-          <p style="margin:1% 10% 1% 5%; font-size: max(1.3vw, 2vh);"  class="neonText">李蕴祺</p>
-          <p style="margin:1% 10% 1% 5%; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">With aesthetic foundation built from Industrial Design as her bachelor’s degree and her passion with computer graphics, 
+          <h2 style="margin:1% 10% 1% 5% !important; text-align:left !important" class="neonText">Yunqi Li</h2>
+          <h2 style="margin:1% 10% 1% 5% !important; text-align:left !important" class="neonText">李蕴祺</h2>
+          <p style="margin:1% 10% 1% 5% !important; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">With aesthetic foundation built from Industrial Design as her bachelor’s degree and her passion with computer graphics, 
             Yunqi Li pursues her career as a technical artist with her goal of making novel and advanced game graphics. With her solid foundation in mathematics and art, 
             she determined her position to focus on real-time technical rendering to improve artistic expresstion in game industry. She will continue exploring possibilities 
             in game graphics and newest technology in the future.</p>

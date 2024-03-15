@@ -35,19 +35,18 @@ img{
 }
 
 nav{
-  backdrop-filter: blur(10px);
-  -webkit-mask-image: -webkit-gradient(linear,left 50%,left 100%, from(rgba(255,255,1,1)), to(rgba(0,0,0,0)));
+  backdrop-filter: blur(20px);
+  mask-image: linear-gradient(rgba(0,0,0,1) 50%, rgba(0,0,0,0));
   padding: 3% 0 !important;
 }
 
 h2{
-  font-size: max(1.3vw, 2vh);
   margin:1% auto 0 auto !important;
   text-align: center;
 }
 
 .card{
-  box-shadow: 0 0 10px 0px #636bb4;
+  box-shadow: 0px 2px 0px 2px rgba(100, 108, 180, 0.7);
 }
 
 h2, .neonText{
@@ -133,17 +132,20 @@ hr{
 }
 
 .circle{
-  z-index: 10;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, rgb(138, 25, 190), rgb(152, 13, 78));
+  width: 50px;
+  height: 50px;
+  border-radius:25%;
+  background: transparent;
   position: absolute;
   top: 0;
   left: 0;
-  animation: animate 0.4s ease-in-out infinite;
-  box-shadow: 0 0 50px 10px red;
+  animation: animate 2s ease-in-out infinite;
+  backdrop-filter: hue-rotate(120deg) brightness(200%);
+  box-shadow: 0 0 60px 10px #636bb4;
+  /* -webkit-mask-box-image: url(../source/mask.png) 75 stretch;
+  opacity: 0.6; */
 } 
+
 
 @keyframes animate{
   100%{
