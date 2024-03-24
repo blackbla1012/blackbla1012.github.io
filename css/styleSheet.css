@@ -162,3 +162,7 @@ video{
 iframe{
   z-index: 2;
 }
+
+video{
+  width: 90%;
+}
