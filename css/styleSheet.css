@@ -1,23 +1,23 @@
 
 body{
-    background-color: black;
+    background-color: white;
     font-family: font2, pixelChinese;
-    color:white !important;
+    color:black !important;
     /* background-image: url('data:image/svg+xml,%3Csvg width="42" height="44" viewBox="0 0 42 44" xmlns="http://www.w3.org/2000/svg"%3E%3Cg id="Page-1" fill="none" fill-rule="evenodd"%3E%3Cg id="brick-wall" fill="%239C92AC" fill-opacity="0.4"%3E%3Cpath d="M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E'); */
 }
 
 .dropdown-item.active, .dropdown-item:active {
-  color: white;
+  color: black;
   text-shadow: #FC0 1px 0 10px;
   background-color: rgba(255,255,255,0); 
 }
 
 .dropdown-item, .dropdown-item:visited{
-color: white;
+color: black;
 }
 
 .navbar-brand{
-color: white;
+color: black;
 }
 
 .navbar-brand:hover, .dropdown-item:hover{
@@ -45,29 +45,10 @@ h2{
   text-align: center;
 }
 
-.card{
-  box-shadow: 0px 2px 0px 2px rgba(100, 108, 180, 0.7);
-}
-
 h2, .neonText{
   -webkit-animation: glow 2s ease-in-out infinite alternate;
   -moz-animation: glow 2s ease-in-out infinite alternate;
   animation: glow 2s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes glow {
-  from {
-    color: #fff;
-    text-shadow: 0 0 5px #00fff2, 0 0 10px #29d6cd,
-      0 0 15px #29d6cd, 0 0 20px #29d6cd, 0 0 25px #29d6cd,
-      0 0 30px #29d6cd, 0 0 35px #29d6cd, 0 0 40px #29d6cd;
-  }
-  to {
-    color: gray;
-    text-shadow: 0 0 10px #29d6cd, 0 0 15px #29d6cd,
-      0 0 20px #29d6cd, 0 0 25px #29d6cd, 0 0 30px #29d6cd,
-      0 0 35px #29d6cd, 0 0 40px #29d6cd, 0 1 45px #29d6cd;
-  }
 }
   
 @media (min-width: 1200px) {
@@ -92,32 +73,12 @@ h2, .neonText{
 }
 
 hr{
-  border-top: 1vh dotted;
-  margin: 0 auto;
-  width: 8% !important;
-  -webkit-animation: glowHR 1s step-end infinite alternate;
-  -moz-animation: glowHR 1s step-end infinite alternate;
-  animation:glowHR 1s step-end infinite alternate;
-  opacity: 0.5 !important;
+  border-top: 0.4vh dotted;
+  margin: 8% auto;
+  width: 20% !important;
+  opacity: 0.2 !important;
 }
 
-@-webkit-keyframes glowHR {
-  0% {
-    border-color: rgb(255, 255, 255);
-  }
-  25% {
-    border-color: #00fff2;
-  }
-  50% {
-    border-color: white;
-  }
-  75% {
-    border-color: rgb(255, 0, 208);
-  }
-  100% {
-    border-color: rgb(255, 255, 255);
-  }
-}
 
 .button{
   color: #ffffff;
@@ -126,24 +87,20 @@ hr{
   width: 80%;
   border-radius: 10px !important;
   box-shadow: 5px 5px 0px 0px #636bb4;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation:glow 1s ease-in-out infinite alternate; 
   position: relative;
   z-index: 2;
 }
 
 .circle{
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   border-radius:25%;
   background: transparent;
   position: absolute;
   top: 0;
   left: 0;
-  animation: animate 2s ease-in-out infinite;
   backdrop-filter: hue-rotate(120deg) brightness(200%);
-  box-shadow: 0 0 60px 10px #636bb4;
+  box-shadow: 0 0 20px 2px rgb(203, 203, 203);
   /* -webkit-mask-box-image: url(../source/mask.png) 75 stretch;
   opacity: 0.6; */
 } 

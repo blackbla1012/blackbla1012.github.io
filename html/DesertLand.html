@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Desert Land</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/styleSheet.css">
+    </head>
+
+    <style>
+      .Features {
+        font-size: min(2vw, 2vh);
+      }
+
+      img{
+        border-radius: 1vw;
+        max-width: 90%;
+      }
+
+      .description{
+        max-width: 70%;
+      }
+
+      .row{
+        margin: 5% 0;
+      }
+
+    </style>
+
+    <body>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg sticky-top">
+              <div class="container-fluid">
+                <a class="navbar-brand" href="MainPage.html"><img src="../source/blackLogo.gif" width="30vw"> Yunqili</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon navbar-dark"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <!-- <li class="nav-item dropdown">
+                      <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Home</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#BVW">BVW Worlds</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#Program">Programming</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#Interaction">Innovative Interaction</a></li>
+                      </ul>
+                    </li> -->
+                  </ul>
+                  <!-- <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form> -->
+                </div>
+              </div>
+            </nav>
+
+            <h2>Desert Rendering</h2>
+
+            <div class="row d-flex">
+                <div class="col-0 col-md-1 p-0"></div>
+                <div class="col-12 col-md-10 p-0">
+                    <div class="col-12 p-0 d-flex justify-content-center">
+                      <!-- <video src="../source/trials/toolShowCase.mp4" controls="true"></video> -->
+                      <video controls="true">
+                        <source src="https://github.com/blackbla1012/blackbla1012.github.io/raw/main/source/unityShader/outlineShader.mp4" type="video/mp4">
+                      </video>
+                    </div>
+                    <div class="col-12 p-0" style="text-align: center;">
+                        <h5>Edge Scale + Alpha</h5>
+                    </div>
+                </div>
+                <div class="col-0 col-md-1 p-0"></div>
+            </div>
+
+            <h2>Footprint Showcase</h2>
+
+            <h5 style="text-align: center; margin: 2% auto 2% auto">1. Desert Landscape Model<br>沙漠模型</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                尝试用高度图制作沙漠地形：在Maya种应用Height Map但是锯齿严重。在unity场景拉近时非常明显。
+            </p>
+
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-8 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/heightMapProblem.png" alt="HeightMap Landscape Problem">
+                </div>
+                <div class="col-12 col-md-4 p-0"  style="text-align: center; margin: 2% auto">
+                    <img src="../source/Desert/unityDesertAliasing.png" alt="HeightMap Landscape Problem">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">unity中的场景 - 锯齿明显</p>
+                </div>
+           </div>
+
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                最后还是使用了Blender的Sculpture工具拉出来了一个尽可能圆滑的沙漠模型。在unity中获得了更好的视觉效果
+            </p>
+
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-8 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/desertSculpt.png" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-4 p-0" style="text-align: center; margin: 2% auto">
+                    <img src="../source/Desert/unityDesertAntiAliasing.png" alt="Desert in Unity">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">unity中的场景 - 边缘较平滑</p>
+                </div>
+           </div>
+            
+            <h5 style="text-align: center; margin: 2% auto 2% auto">2. Desert Shader - Surface<br>沙漠Shader - 表面</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                粗糙表面光照模型：Oren Nayar光照模型
+                <br>
+                以及基于像素（片元）的多光源支持
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/multiLightingDiffuseWAmbient.png" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-6 p-0" style="text-align: center; margin: 2% auto">
+                    <img src="../source/Desert/OrenNayar.png" alt="Desert in Unity">
+                    <br>
+                    <img src="../source/Desert/surfaceShaderDiffuse.png" style="margin: 2% auto;" alt="Desert in Unity">
+                </div>
+           </div>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                根据沙丘朝向变换法线纹理方向
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/directionalNormal.png" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-6 p-0" style="text-align: center; margin: 2% auto">
+                    <img src="../source/Desert/directionalNormalCode.png" alt="Desert in Unity">
+                </div>
+           </div>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                镜面反射：用一个Detail Normal的细节法线纹理制造在镜面反射区域的波纹效果。
+                <br>
+                镜面反射采用Blinn-phong光照模型。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/Specular.png" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-6 p-0" style="text-align: center; margin: 2% auto">
+                    <img src="../source/Desert/DetailMap.png" alt="Desert in Unity">
+                    <br>
+                    <img src="../source/Desert/BlinnPhong.png" style="margin: 2% auto;" alt="Desert in Unity">
+                </div>
+           </div>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                闪烁：用一张Glitter Noise与时间参数与摄像机视线方向相乘，主要在菲涅尔区域产生随视线和时间闪动的光点。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/Glitter.png" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-6 p-0" style="text-align: center; margin: 2% auto">
+                    <img src="../source/Desert/GlitterNOise.png" alt="Desert in Unity">
+                    <br>
+                    <img src="../source/Desert/GlitterDistribution.png" style="margin: 2% auto;" alt="Desert in Unity">
+                </div>
+           </div>
+            <h5 style="text-align: center; margin: 2% auto 2% auto">3. Lake Shader Graph<br>湖泊Shader Graph</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                主要实现了法线波动、湖水深度颜色透明度变化、边缘处的发光纹理（模拟泡沫）以及水面位移。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/lake.png" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-6 p-0" style="text-align: center; margin: 2% auto">
+                    <img src="../source/Desert/WaterShaderGraph.png" alt="Desert in Unity">
+                </div>
+           </div>
+            <h5 style="text-align: center; margin: 2% auto 2% auto">4. Houdini PCG - Cactus<br>仙人掌Houdini生成</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                仙人掌生成节点图。以此为基础创建HDA文件，输入为一个线段。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-8 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/cactusNodes.png" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-4 p-0" style="text-align: center; margin: 2% auto">
+                    <img src="../source/Desert/cactusHDA.png" alt="Desert in Unity">
+                </div>
+           </div>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                节点中可调节的参数包括了主干的宽度、副枝干的宽度、副枝干的数量、弯曲程度等。
+            </p>
+            <p>这里放MP4文件
+            </p>
+            <h5 style="text-align: center; margin: 2% auto 2% auto">5. Substance Designer - Gravel & Stylized Brick<br>SD - 沙石与风格化砖块</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                河边沙石：
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/SDGravel.png" alt="Desert Landscape">
+                </div>
+           </div>
+           <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                创建了Rock Sculpter和Rock Noise两个辅助图表：
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-6 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/rockSculpterGraph.png" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-6 p-0" style="text-align: center; margin: 2% auto">
+                    <img src="../source/Desert/rockNoiseGraph.png" alt="Desert in Unity">
+                </div>
+           </div>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                风格化砖块：
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0 d-flex justify-content-center">
+                    <img src="../source/Desert/SDbrick.png" alt="Desert Landscape">
+                </div>
+           </div>
+           
+            <h5 style="text-align: center; margin: 2% auto 2% auto">6. Desert Shader - Tessellation<br>沙漠Shader - 曲面细分</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                因为应用高度图的本质是一个顶点位移着色器，顶点太少就难以看出使用了高度图。
+                <br>
+                所以为了能够更好得展示在SD中制作的沙石材质，需要采用曲面细分的方式才能更好地将Height Map应用到地面上。
+                <br>
+                曲面细分着色器:
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-4 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/hullShader.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">Hull Shader</p>
+                </div>
+                <div class="col-12 col-md-4 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/TessellationFunction.png" alt="Desert in Unity">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">Tessellation Function</p>
+                </div>
+                <div class="col-12 col-md-4 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/domainShader.png" alt="Desert in Unity">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">Domain Shader</p>
+                </div>
+            </div>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                曲面细分优化：根据摄像机距离进行曲面细分复杂程度变化。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/TessellationCamera.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">根据摄像机距离判断细分参数</p>
+                </div>
+            </div>
+            这里放MP4文件
+            <h5 style="text-align: center; margin: 2% auto 2% auto">7. Desert Shader - Texture Blend<br>沙漠Shader - 材质混合</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                用Polybrush工具在一个地形模型上混合不同的材质需要编写一个材质根据顶点颜色通道变化的Shader。
+                <br>
+                在Shader中用顶点颜色通道值定义不同材质的融合：
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/heightBlend.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">Height Blend</p>
+                </div>
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/normalBlend.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">Normal Blend</p>
+                </div>
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/colorBlend.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">Color Blend</p>
+                </div>
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/AOBlend.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">AO Blend</p>
+                </div>
+            </div>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                用Polybrush在地形上涂刷不同材质：
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/TextureBlend.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">*图为示例并非原场景</p>
+                </div>
+            </div>
+            <h5 style="text-align: center; margin: 2% auto 2% auto">8. Desert Shader + C# Script - Footprint<br>沙漠Shader与角色脚本 - 角色脚印实现</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                在角色移动脚本和着色器中定义脚印数据结构体并在着色器中声明一个Structured Buffer用来传递数值。
+                <br>
+                用一个结构体数组储存所有脚印信息，定义最多能够显示的脚印数量并编写信息写入逻辑。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-7 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/CharacterFootprintStructure.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">C#定义</p>
+                </div>
+                <div class="col-12 col-md-5 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/FootprintStructure.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">Shader定义</p>
+                </div>
+            </div>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                编写角色控制脚本，在角色移动脚面落地的动画事件触发脚印信息写入Shader函数。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-4 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/FootOnGround.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">角色脚踩地面时</p>
+                </div>
+                <div class="col-12 col-md-8 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/AnimationEvent.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">设置动画事件</p>
+                </div>
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/UpdateFootprint.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">主要写入函数逻辑</p>
+                </div>
+            </div>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                每帧更新着色器中的时间变量，通过计算差值计算出脚印的淡化参数。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/timeUpdate.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">进行时长更新</p>
+                </div>
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/FootprintFade.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">根据时长计算淡化比例</p>
+                </div>
+            </div>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                沿用并优化曲面细分着色器
+                <br>
+                只在运用了需要细分的材质（沙石）和脚印部分采用曲面细分，同时保留摄像机距离优化。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/tessellationRestriction.png" alt="Desert Landscape">
+                </div>
+            </div>
+            这里放MP4文件·
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                为了贴近脚印的形状写了一个圆角矩形范围检测判断。
+                <br>
+                编写计算逻辑和判定方式查看定点是否处于定义的脚印面积内。
+                <br>
+                通过平滑插值改变下陷深度和计算法线变化。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/footPrintCalculation.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">脚印形状计算与判断、深度变换、法线变换的逻辑</p>
+                </div>
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/rotateFunction.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">方便法线旋转计算的小函数</p>
+                </div>
+                <div class="col-12 col-md-6 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/footprintShape1.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">脚印形状</p>
+                </div>
+                <div class="col-12 col-md-6 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/footprintShape2.png" alt="Desert Landscape">
+                    <br>
+                    <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">显示线框脚印展示</p>
+                </div>
+            </div>
+            <h5 style="text-align: center; margin: 2% auto 2% auto">9. Scene Build<br>场景搭建</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                建筑、石头、小草、棕榈树用了资源。
+                <br>
+                用Polybrush物体笔刷搭建再微调。
+                <br>
+                沙石与沙漠材质混合也使用了Polybrush材质混合笔刷绘制。
+                <br>
+                建筑上的墙面用了SD中制作的风格化砖块。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/SceneBuild.png" alt="Desert Landscape">
+                </div>
+            </div>
+            <h5 style="text-align: center; margin: 2% auto 2% auto">10. Grass Sway Shader<br>小草摆动Shader</h5>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-8 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/grassWaveShader.png" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-4 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/grassWaveGIF.gif" alt="Desert Landscape">
+                </div>
+            </div>
+            <h5 style="text-align: center; margin: 2% auto 2% auto">11. Dust Storm<br>沙尘效果</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                用sprite sheet制作的简易粒子系统。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-8 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/smokeGIF.gif" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-4 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/smokeSpriteSheet.png" alt="Desert Landscape">
+                </div>
+            </div>
+            <h5 style="text-align: center; margin: 2% auto 2% auto">12. Fog<br>增加雾效</h5>
+            <h5 style="text-align: center; margin: 2% auto 2% auto">13. Lighting & Skybox<br>调整打光和天空盒</h5>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/skybox.png" alt="Desert Landscape">
+                </div>
+            </div>
+            <h5 style="text-align: center; margin: 2% auto 2% auto">14. Post Process<br>后处理</h5>
+            <p style="font-size: min(1.2vw, 1.2vh);  text-align: center;">
+                调整了色彩、模糊、暗角、辉光等。
+            </p>
+            <div class="row d-flex justify-content-center align-items-center">
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto; max-width: 70% !important;">
+                    <img src="../source/Desert/postProcessList.png" alt="Desert Landscape">
+                </div>
+                <div class="col-12 col-md-12 p-0" style="text-align: center; margin: 1% auto">
+                    <img src="../source/Desert/postProcess.png" alt="Desert Landscape">
+                </div>
+            </div>
+
+    </div>
+    <div class="circle"></div>
+    <script src="../js/circle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    </body>
+</html>
+ 
