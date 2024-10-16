@@ -7,11 +7,50 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styleSheet.css">
     <style>
-      img {
+      .graphicDesign img {
         border-radius: 1vm !important;
         padding: 5%;
       }
 
+      .MainImg {
+        transition: transform .2s;
+        border-radius:10px !important;
+        z-index: 2;
+      }
+
+      .card-img-overlay {
+          display: none !important;
+      }
+
+      .MainImg:hover{
+        transform: scale(1.05);
+      }
+
+      .MainImg:hover .card-img-overlay{
+        cursor: pointer !important;
+      }
+
+      .card:hover .card-img-overlay{
+        display: flex !important;
+      }
+
+      .card{
+        z-index: 2;
+      }
+
+      .btn img{
+        aspect-ratio: 1.5;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .card:hover {
+        cursor: default;
+      }
+
+      .card {
+        border-radius:10px !important;
+      }
     </style>
   </head>
   <body>
@@ -49,15 +88,123 @@
 
       <div class="row" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
         
+        <h2>3D Art</h2>
+
+        <h2 id="trials">Maya/Blender</h2>
+        <!-- row 1 -->
+        <div class="row d-flex">
+          <div class="col-12 col-md-6 p-0">
+            <a class="btn p-0 border-0" href="cat.html">
+              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
+                <img src="../source/blender/catMonster.png" class="card-img" alt="photo1">
+                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
+                  <h6 class="text-white">Blender - CatMonster</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 p-0">
+            <a class="btn p-0 border-0" href="fish.html">
+              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
+                <img src="../source/blender/fishMonster.png" class="card-img" alt="photo1">
+                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
+                  <h6 class="text-white">Blender - FishMonster</h6>
+                </div>
+              </div>
+            </a>          
+          </div>
+
+        </div>
+        <!-- row 2 -->
+        <div class="row d-flex" style="padding: 2.5%;">
+
+          <div class="col-12 col-md-3 p-0">
+            <a class="btn p-0 border-0">
+              <div class="card " style="margin:2%;border-radius:2vw; border:0; overflow: hidden;">
+                <img src="../source/trials/WoodenLantern.png" class="card-img" alt="photo1">
+                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
+                  <h6 class="text-white">Maya/Substaince Painter</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-3 p-0">
+            <a class="btn p-0 border-0">
+              <div class="card " style="margin:2%;border-radius:2vw; border:0; overflow: hidden;">
+                <img src="../source/trials/ChineseLantern.png" class="card-img" alt="photo1">
+                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
+                  <h6 class="text-white">Maya/Substaince Painter</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-3 p-0">
+            <a class="btn p-0 border-0">
+              <div class="card " style="margin:2%;border-radius:2vw; border:0; overflow: hidden;">
+                <img src="../source/trials/stoneBridge.png" class="card-img" alt="photo1">
+                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
+                  <h6 class="text-white">Maya</h6>
+                </div>
+              </div>
+            </a>          
+          </div>
+
+          <div class="col-12 col-md-3 p-0">
+            <a class="btn p-0 border-0">
+              <div class="card" style="margin:2%;border-radius:2vw; border:0; overflow: hidden;">
+                <img src="../source/trials/stylizedStone.png" class="card-img" alt="photo1">
+                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
+                  <h6 class="text-white">Zbrush</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        <hr>
+
+        <h2 id="trials">Unreal Engine</h2>
+
+        <!-- Zengarden -->
+        <div class="row d-flex">
+          <div class="col-12 col-md-6 p-0">
+            <a class="btn p-0 border-0" href="ZenGarden.html" style="width:100%;">
+              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
+                <img src="../source/ZenGardengif.gif" class="card-img" alt="Zen Garden">
+                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
+                  <h6 class="text-white">UE5 - Zen Garden</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 p-0">
+            <a class="btn p-0 border-0" href="Greenhouse.html" style="width:100%;">
+              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
+                <img src="../source/unreal/greenhouse_cover.png" class="card-img" alt="Greenhouse">
+                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
+                  <h6 class="text-white">UE5 - Greenhouse</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <hr>
+
+        <h2>2D Art / Design</h2>
         <h2>Drawing / Visual Design</h2>
 
         
         <div class="row d-flex">
-          <div class="col-12 col-md-6 p-0">
+          <div class="col-12 col-md-6 p-0 graphicDesign">
             <img src="../source/random/poster.png" class="card-img"  alt="aiWonderlandPoster">
           </div>
 
-          <div class="col-12 col-md-6 p-0 d-flex align-items-center justify-content-center">
+          <div class="col-12 col-md-6 p-0 d-flex align-items-center justify-content-center graphicDesign">
             <img src="../source/random/AI_Wonderland_logo.png" class="card-img" style="width: 70%;" alt="aiWonderlandPoster">
           </div>
 
@@ -65,11 +212,11 @@
         </div>
         <div class="row d-flex">
 
-            <div class="col-12 col-md-6 p-0 d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md-6 p-0 d-flex align-items-center justify-content-center graphicDesign">
               <img src="../source/random/AlighteR_logo_whiteFont.png" class="card-img" style="width: 80%;" alt="aiWonderlandPoster">
             </div>
   
-            <div class="col-12 col-md-6 p-0">
+            <div class="col-12 col-md-6 p-0 graphicDesign">
                 <img src="../source/random/halfSheetFR.jpg" class="card-img"  alt="aiWonderlandPoster">
             </div>
            
@@ -78,11 +225,11 @@
         <h2>Pixel - Animated Cursor</h2>
 
         <div class="row d-flex"> 
-            <div class="col-12 col-md-8 p-0 d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md-8 p-0 d-flex align-items-center justify-content-center graphicDesign">
                 <img src="../source/random/cursor1.gif" class="card-img"  alt="cursor1">
               </div>
     
-              <div class="col-12 col-md-4 p-0 d-flex align-items-center justify-content-center">
+              <div class="col-12 col-md-4 p-0 d-flex align-items-center justify-content-center graphicDesign">
                   <img src="../source/random/cursor2.gif" class="card-img"  alt="cursor2">
               </div>
         </div>

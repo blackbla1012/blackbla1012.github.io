@@ -20,10 +20,17 @@
       .MainImg:hover{
         transform: scale(1.05);
       }
-
+      
       .MainImg:hover .card-img-overlay{
-        display: flex !important;
         cursor: pointer !important;
+      }
+
+      .card:hover .card-img-overlay{
+        display: flex !important;
+      }
+
+      .card{
+        z-index: 2;
       }
 
       .btn img{
@@ -75,8 +82,35 @@
 
       <div class="row" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
         
+        <h2 id="programming">C++ - CG</h2>
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-12 col-md-6 p-0">
+            <a class="btn p-0 border-0" href="Scotty3D.html">
+              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
+                <img src="../source/CG/BVH.png" class="card-img" alt="bingo">
+                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
+                  <h6 class="text-white">Scotty3D</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-12 col-md-6 p-0">
+            <a class="btn p-0 border-0" href="Vulkan.html">
+              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
+                <img src="../source/CG/vulkan1.png" class="card-img" alt="vulkan">
+                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
+                  <h6 class="text-white">Vulkan - Scene Viewer</h6>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <hr>
+
         <h2 id="trials">Unity</h2>
-        
        
         <div class="row d-flex">
            <!-- AlighteR -->
@@ -97,34 +131,6 @@
                 <img src="../source/Desert/desertCover.gif" class="card-img" alt="Zen Garden">
                 <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
                   <h6 class="text-white">Desert Land</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <hr>
-
-        <h2 id="trials">Unreal Engine</h2>
-
-        <!-- Zengarden -->
-        <div class="row d-flex">
-          <div class="col-12 col-md-6 p-0">
-            <a class="btn p-0 border-0" href="ZenGarden.html" style="width:100%;">
-              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/ZenGardengif.gif" class="card-img" alt="Zen Garden">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">UE5 - Zen Garden</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="col-12 col-md-6 p-0">
-            <a class="btn p-0 border-0" href="Greenhouse.html" style="width:100%;">
-              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/unreal/greenhouse_cover.png" class="card-img" alt="Greenhouse">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">UE5 - Greenhouse</h6>
                 </div>
               </div>
             </a>
@@ -187,125 +193,6 @@
             </a>
           </div>
 
-        </div>
-
-        <hr>
-
-        <h2 id="trials">Maya/Blender</h2>
-        <!-- row 1 -->
-        <div class="row d-flex">
-          <div class="col-12 col-md-4 p-0">
-            <a class="btn p-0 border-0">
-              <div class="card " style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/trials/WoodenLantern.png" class="card-img" alt="photo1">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">Maya/Substaince Painter - Wooden Lantern</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-12 col-md-4 p-0">
-            <a class="btn p-0 border-0">
-              <div class="card " style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/trials/ChineseLantern.png" class="card-img" alt="photo1">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">Maya/Substaince Painter - Chinese Lantern</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-12 col-md-4 p-0">
-            <a class="btn p-0 border-0">
-              <div class="card " style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/trials/stoneBridge.png" class="card-img" alt="photo1">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">Maya - Stone Bridge</h6>
-                </div>
-              </div>
-            </a>          
-          </div>
-        </div>
-        <!-- row 2 -->
-        <div class="row d-flex">
-          <div class="col-12 col-md-4 p-0">
-
-            <a class="btn p-0 border-0">
-              <div class="card" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/trials/stylizedStone.png" class="card-img" alt="photo1">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">Zbrush - Rock</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-12 col-md-4 p-0">
-            <a class="btn p-0 border-0" href="cat.html">
-              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/blender/catMonster.png" class="card-img" alt="photo1">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">Blender - CatMonster</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-12 col-md-4 p-0">
-            <a class="btn p-0 border-0" href="fish.html">
-              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/blender/fishMonster.png" class="card-img" alt="photo1">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">Blender - FishMonster</h6>
-                </div>
-              </div>
-            </a>          
-          </div>
-        </div>
-
-        <hr>
-
-        <h2 class="scrollFade">ETC Projects</h2>
-
-          <div class="col-12 col-md-6 p-0">
-            <a class="btn p-0 border-0" href ="../html/Alighter.html">
-              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/ETCProjects/alighter_cover.png" class="card-img" alt="photo1">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">AlighteR</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        
-        <hr>
-
-        <h2 id="programming">C++ - CG</h2>
-
-        <div class="row d-flex justify-content-center">
-          <div class="col-12 col-md-6 p-0">
-            <a class="btn p-0 border-0" href="Scotty3D.html">
-              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/CG/BVH.png" class="card-img" alt="bingo">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">Scotty3D</h6>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="col-12 col-md-6 p-0">
-            <a class="btn p-0 border-0" href="Vulkan.html">
-              <div class="card MainImg" style="margin:5%;border-radius:2vw; border:0; overflow: hidden;">
-                <img src="../source/CG/vulkan1.png" class="card-img" alt="vulkan">
-                <div class="card-img-overlay bg-black bg-opacity-25 d-flex align-items-end justify-content-end">
-                  <h6 class="text-white">Vulkan - Scene Viewer</h6>
-                </div>
-              </div>
-            </a>
-          </div>
         </div>
 
         <hr>
