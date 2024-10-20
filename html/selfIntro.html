@@ -14,8 +14,8 @@
       }
 
       .card-img-overlay {
-          display: none !important;
-        }
+        display: none !important;
+      }
 
       .MainImg:hover{
         transform: scale(1.05);
@@ -38,6 +38,16 @@
 
       .card {
         border-radius:10px !important;
+      }
+
+      #link {
+        text-decoration: none;
+        color: rgb(122, 79, 223) !important; /* 默认颜色 */
+        transition: color 0.3s !important; /* 可选的颜色过渡效果 */
+      }
+      
+      #link:hover {
+        color: rgb(235, 167, 19) !important; /* 悬停时的颜色 */
       }
     </style>
   </head>
@@ -137,9 +147,6 @@
           我研究生期间在卡内基梅隆大学ETC就读。在研究生期间的两年，我了解到更多游戏及游戏化娱乐产品开发与制作相关的流程与技术，让我逐渐对这个行业产生更浓厚的兴趣。在每一轮小项目或大项目的制作中，我担任过与职业目标相符合的制作人、UI/UX设计师职位，也因为自身对美术、音乐的喜爱而担任过3D美术、技术美术、音乐设计等职位。在项目中，我主要管理项目进展，规划领导会议，帮助组员和导师沟通，搭建程序与美术、设计的桥梁，受到了同学的一致好评。在研究生期间，我还参与了学生自发组织的Festival Bingo网页企划，为ETC的年终Festival制作活动网站。我在2023年3月参观了的GDC了解最新游戏技术。在研究生期间，我对技术美术这个职位产生过一定的兴趣，学习了Unity和Unreal中的shader编写并在CMU学习了计算机图形学拿到了满绩。
         </p>
         <p style="padding:0.5% 3.33%; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;margin:0">  
-          学习之余，我对音乐也有一定造诣。早年学习6年声乐为我的乐感和乐理知识打下了比较坚实的基础。我在音乐编写制作、背景音乐编曲、音效制作方面也有一些尝试，可以比较熟练运用logic pro进行编曲。
-        </p>
-        <p style="padding:0.5% 3.33%; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;margin:0">  
           从个人评价方面，我认为自己是一个比较有创新想法和创造力、且注重逻辑分析的人。在做事方面，我能做到仔细认真，在人际交往方面与人为善，容易与他人友好相处。
         </p>
     </div>
@@ -152,15 +159,15 @@
         Wechat: Blackness_1012
         <br>
         Email:
-        <a href="Mailto:yunqilee@126.com?Subject=Hello%20Again">yunqilee@126.com</a>
+        <a id="link" href="Mailto:yunqilee@126.com?Subject=Hello%20Again" style="z-index: 2;color: blueviolet;">yunqilee@126.com</a>
         <br>
         Phone: 13357193720
       </div>
-      <div class="col-md-6 col-12" style="text-align: center;">
-        Resume:
+      <div class="col-md-6 col-12 d-flex align-items-center justify-content-center" style="text-align: center;">
+        <a id="link" href="../source/Yunqili_Resume.pdf" style="z-index: 2;padding: 2px;color: white;border-bottom: dashed 1.5px black;font-size: larger;">My Resume </a>
       </div>
     </div>
-    <div class="circle"></div>
+    <!-- <div class="circle"></div> -->
     <script src="../js/circle.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <!-- <script src="../js/scrollfade-0.1.js"></script> -->
