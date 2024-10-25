@@ -84,6 +84,19 @@ hr{
   opacity: 0.2 !important;
 }
 
+@keyframes buttonFocus{
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 
 .button{
   color: #ffffff;
@@ -94,6 +107,7 @@ hr{
   box-shadow: 5px 5px 0px 0px #636bb4;
   position: relative;
   z-index: 2;
+  animation: buttonFocus 1s cubic-bezier(0.01, 0.59, 1, 0.41) infinite;
 }
 
 .circle{
@@ -131,7 +145,7 @@ video{
 
 #link {
   text-decoration: none;
-  transition: color 0.3s !important; /* 可选的颜色过渡效果 */
+  transition: color 0.2s !important; /* 可选的颜色过渡效果 */
 }
 
 #link:hover {
